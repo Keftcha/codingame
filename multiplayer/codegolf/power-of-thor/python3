@@ -1,0 +1,14 @@
+lx,ly,itx,ity=[int(i) for i in input().split()]
+idx_x=idx_y=0
+while 1:
+ A=""
+ dx=abs(lx-itx);dy=abs(ly-ity)
+ if idx_y<dy:
+  if ity<ly:A="S"
+  if ity>ly:A="N"
+  idx_y+=1
+ if idx_x<dx:
+  if itx<lx:A+="E"
+  if itx>lx:A+="W"
+  idx_x+=1
+ print(A)
