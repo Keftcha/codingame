@@ -1,2 +1,2 @@
 a,b,c,d=[int(i)for i in raw_input().split()]
-while 1:x,c=("E",c+1)if c<a else("W",c-1)if c>a else("",c);y,d=("N",d-1)if d>b else("S",d+1)if d<b else("",d);print(y+""+x)
+while 1:x,c=("E",c+1)if c<a else("W",c-1)if c>a else("",c);y,d=("N",d-1)if d>b else("S",d+1)if d<b else("",d);print(y+x)
