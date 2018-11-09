@@ -1,11 +1,11 @@
-dic={}
-_,w,_,_,exp,_,_,nb=[int(i) for i in input().split()]
-for i in range(nb):
- ef,ep=[int(j) for j in input().split()]
- dic[ef]=ep
-while True:
- cf,cp,dire=input().split()
- cf,cp=int(cf),int(cp)
- try:va=dic[cf]
- except:va=exp
- print("BLOCK"if cp<va and dire=="LEFT" or cp>va and dire=="RIGHT" else "WAIT")
+d={}
+l=[int(i)for i in input().split()]
+for i in range(l[7]):
+ a,b=input().split()
+ d[int(a)]=int(b)
+while 1:
+ k,m,v=input().split()
+ m=int(m)
+ try:f=d[int(k)]
+ except:f=l[4]
+ print("BLOCK"if m<f and v=="LEFT"or m>f and v=="RIGHT"else"WAIT")
