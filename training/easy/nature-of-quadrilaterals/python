@@ -69,7 +69,6 @@ def square(sides):
     return rectangle(sides) and rhombus(sides)
 
 
-quadrilaterals = []
 n = int(input())
 for i in range(n):
     a, xa, ya, b, xb, yb, c, xc, yc, d, xd, yd = raw_input().split()
