@@ -1,0 +1,4 @@
+read ip:string(18)
+
+write network address
+broadcast address
