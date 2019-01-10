@@ -1,0 +1,123 @@
+Hello World ! TEST
+Entrée:
+13
+Hello World !
+
+Sortie:
+Uryyb Jbeyq !
+
+Hello World ! VALIDATEUR
+Entrée:
+13
+Hello World !
+
+Sortie:
+Uryyb Jbeyq !
+
+------------------------------------------------------------------------------
+
+With numbers TEST
+Entrée:
+15
+25 2 50 452 8
+
+Sortie:
+25 2 50 452 8
+
+With numbers VALIDATEUR
+Entrée:
+15
+505 2 50 245 7
+
+Sortie:
+505 2 50 245 7
+
+------------------------------------------------------------------------------
+
+Big X TEST
+Entrée:
+46392
+This is a big number.
+
+Sortie:
+Bpqa qa i jqo vcujmz.
+
+Bix X VALIDATEUR
+Entrée:
+76829
+This is a big number.
+
+Sortie:
+Sghr hr z ahf mtladq.
+
+------------------------------------------------------------------------------
+
+Negative X TEST
+Entrée:
+-4
+What a negative X can give ?
+
+Sortie:
+Sdwp w jacwpera T ywj cera ?
+
+Negative X VALIDATEUR
+Entrée:
+-7
+What a negative X can give ?
+
+Sortie:
+Patm t gxztmbox Q vtg zbox ?
+
+------------------------------------------------------------------------------
+
+Drunk phrase TEST
+Entrée:
+18
+ThE qUiCk BrOwN fOx JuMpS oVeR tHe LaZy DoG
+
+Sortie:
+LzW iMaUc TjGoF xGp BmEhK gNwJ lZw DsRq VgY
+
+Validator 5 VALIDATEUR
+Entrée:
+24
+tHe QuIcK bRoWn FoX jUmPs OvEr ThE lAzY dOg
+
+Sortie:
+rFc OsGaI zPmUl DmV hSkNq MtCp RfC jYxW bMe
+
+------------------------------------------------------------------------------
+
+Random caracters TEST
+Entrée:
+35
+S*_gU4àHDuT{K.sw4vSPOdr¤QT§XSs?D^o+!f41qb@sàKèJ~u;#.#p??P~T25cnBé!`}+¤(ufa4[oQ¤w.m¹/QkQ+v|R|àNu?Rf`V
+
+Sortie:
+B*_pD4gQMdC{T.bf4eBYXma¤ZC§GBb?M^x+!o41zk@bgToS~d;#.#y??Y~C25lwKp!`}+¤(doj4[xZ¤f.v¹/ZtZ+e|A|gWd?Ao`E
+
+Random caracters VALIDATEUR
+Entrée:
+21
+à}w]v;aY#)@y0OGùn.HOf&k!Qz84l1H(è&#KG~!rNyYZ¹l/m}%x3G!¤y:iedbàe,3è~3v5rQn(HEfc7l5%DGcW7y!weù6~ù7DA,f
+
+Sortie:
+s}r]q;vT#)@t0JBri.CJa&f!Lu84g1C(a&#FB~!mItTU¹g/h}%s3B!¤t:dzywsz,3a~3q5mLi(CZax7g5%YBxR7t!rzr6~r7YV,a
+
+------------------------------------------------------------------------------
+
+A last one TEST
+Entrée:
+0
+None
+
+Sortie:
+None
+
+A last one VALIDATEUR
+Entrée:
+0
+Null
+
+Sortie:
+Null

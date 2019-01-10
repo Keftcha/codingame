@@ -1,0 +1,4 @@
+Given a number X, and a message, you have to encode the message following the patern of the ROT 13 cipher, however not rotate by 13 places but by X places.
+
+The ROT13 is a special case of the Caesar cipher.
+To know more about the ROT 13, see the wikipedia page (https://en.wikipedia.org/wiki/ROT13)
