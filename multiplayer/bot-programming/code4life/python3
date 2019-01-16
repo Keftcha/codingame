@@ -1,0 +1,171 @@
+import sys
+import math
+
+def separate_files(files):
+    player_files = []    # files of the player
+    other_files = []    # files of the opponent
+    cloud_files = []    # files in the cloud
+    
+    for file in files:
+        if file["carried_by"] == 0:
+            player_files.append(file)
+        elif file["carried_by"] == 1:
+            other_files.append(file)
+        elif file["carried_by"] == -1:
+            cloud_files.append(file)
+    
+    return player_files, other_files, cloud_files
+
+
+def what_need(user_files, user_bot):
+    """Return what and how many i need for each file the user have"""
+    need = []
+    for file in user_files:
+        need.append([
+            max(file["cost_a"] - user_bot["storage_a"], 0),
+            max(file["cost_b"] - user_bot["storage_b"], 0),
+            max(file["cost_c"] - user_bot["storage_c"], 0),
+            max(file["cost_d"] - user_bot["storage_d"], 0),
+            max(file["cost_e"] - user_bot["storage_e"], 0)
+        ])
+    
+    return need
+            
+
+def sum_storage(robot):
+    return sum((
+        robot["storage_a"],
+        robot["storage_b"],
+        robot["storage_c"],
+        robot["storage_d"],
+        robot["storage_e"]
+    ))
+
+
+def have_completed_file(files, robot):
+    for file in files:
+        # for each molecules:
+        for molecule in range(97, 102):
+            if file["cost_" + chr(molecule)] <= robot["storage_" + chr(molecule)]:
+                continue
+            else:
+                break
+        else:
+            return True
+    return False
+
+
+def file_completed(files, robot):
+    for idx, file in enumerate(files):
+        if all([robot["storage_" + chr(lettre)] >= file["cost_" + chr(lettre)] for lettre in range(97, 102)]):
+            return idx
+
+
+project_count = int(input())
+for i in range(project_count):
+    a, b, c, d, e = [int(j) for j in input().split()]
+
+# game loop
+while True:
+    robots = []
+    for i in range(2):
+        (target, eta, score,
+        storage_a, storage_b, storage_c, storage_d, storage_e,
+        expertise_a, expertise_b, expertise_c, expertise_d, expertise_e) = input().split()
+        
+        robots.append({
+            "target": target,
+            "eta": int(eta),
+            "score": int(score),
+            
+            # we manualy manage the sorage of robots
+            "storage_a": int(storage_a),
+            "storage_b": int(storage_b),
+            "storage_c": int(storage_c),
+            "storage_d": int(storage_d),
+            "storage_e": int(storage_e),
+            
+            "expertise_a": int(expertise_a),
+            "expertise_b": int(expertise_b),
+            "expertise_c": int(expertise_c),
+            "expertise_d": int(expertise_d),
+            "expertise_e": int(expertise_e)
+        })
+    
+    available_a, available_b, available_c, available_d, available_e = [int(i) for i in input().split()]
+    
+    sample_count = int(input())
+    fichiers = []
+    for i in range(sample_count):
+        sample_id, carried_by, rank, expertise_gain, health, cost_a, cost_b, cost_c, cost_d, cost_e = input().split()
+        
+        fichiers.append(
+            {
+                "sample_id": int(sample_id),
+                "carried_by": int(carried_by),
+                "rank": int(rank),
+                "health": int(health),
+                "cost_a": int(cost_a),
+                "cost_b": int(cost_b),
+                "cost_c": int(cost_c),
+                "cost_d": int(cost_d),
+                "cost_e": int(cost_e)
+            }
+        )
+    
+    # sort files by their health point (higher is better, so the highest is the first)
+    fichiers.sort(key=lambda file: file["health"], reverse=True)
+    
+    # separate the files
+    my_files, other_player_files, cloud_files = separate_files(fichiers)
+    
+    # molecules we needed by files
+    needed = what_need(my_files, robots[0])
+    # sum of molecules we need 
+    sum_needed = [sum(cathegorie) for cathegorie in zip(*needed)]
+    
+    
+    # may we can take a file to execute
+    if len(my_files) < 3 and cloud_files:
+        # if we are at the diagnosis, we take a file
+        if robots[0]["target"] == "DIAGNOSIS":
+            print("CONNECT", cloud_files[0]["sample_id"])
+        # otherwise, we go to the diagnosis
+        else:
+            print("GOTO DIAGNOSIS")
+    
+    # may we have place and we need some molecules
+    elif (
+        # we have place for some molecules
+        sum_storage(robots[0]) < 10 and
+        # we need molecules
+        any([sum(cathegorie) != 0 for cathegorie in zip(*needed)])
+    ):
+        # we aren't at the molecules
+        if robots[0]["target"] != "MOLECULES":
+            print("GOTO MOLECULES")
+        # we are at the molecules and we need molecules
+        else:
+            for idx, molecule_type in enumerate(sum_needed):
+                if molecule_type != 0:
+                    print("CONNECT", chr(idx+65))
+                    break
+    
+    # we have molecules for at least one file
+    elif have_completed_file(my_files, robots[0]):
+        # we aren't at the laboratory bur we hae to
+        if robots[0]["target"] != "LABORATORY":
+            print("GOTO LABORATORY")
+        else:
+            print("CONNECT", my_files[file_completed(my_files, robots[0])]["sample_id"])
+    
+    
+    print("#", robots[0]["target"], "#", file=sys.stderr)
+    [print(file, file=sys.stderr) for file in my_files]
+    print(file=sys.stderr)
+    print(have_completed_file(my_files, robots[0]), file=sys.stderr)
+    print(robots[0]["storage_a"], file=sys.stderr)
+    print(robots[0]["storage_b"], file=sys.stderr)
+    print(robots[0]["storage_c"], file=sys.stderr)
+    print(robots[0]["storage_d"], file=sys.stderr)
+    print(robots[0]["storage_e"], file=sys.stderr)
