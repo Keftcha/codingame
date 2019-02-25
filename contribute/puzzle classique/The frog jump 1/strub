@@ -1,0 +1,10 @@
+read frogNumber:int
+read frogsDistance:string(399)
+
+read initialPosition:string(255)
+read mass:int
+read alpha:int
+read speed:float
+read gravity:string(255)
+
+write frog's place
