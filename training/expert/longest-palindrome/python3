@@ -7,15 +7,13 @@ def chercher(p1, p2, chaine):
         p1 -= 1
         p2 += 1
     return chaine[p1+1:p2]
-
+    
 def ajouter(chaine, liste):
-    if not liste_palin:
-        liste_palin.append(chaine)
-    elif len(liste_palin[0]) == len(chaine):
-        liste_palin.append(chaine)
-    elif len(liste_palin[0]) < len(chaine):
-        del liste_palin[:]
-        liste_palin.append(chaine)
+    if len(liste) == 0 or len(liste[0]) == len(chaine):
+        liste.append(chaine)
+    elif len(liste[0]) < len(chaine):
+        liste.clear()
+        liste.append(chaine)
 
 for idx in range(len(mot) -2):
     if mot[idx] == mot[idx + 1]:
