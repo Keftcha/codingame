@@ -1,24 +1,46 @@
 mot = input()
-
 liste_palin = []
 
-def chercher(p1, p2, chaine):
-    while p2 < len(chaine) and p1 >= 0 and chaine[p1] == chaine[p2]:
-        p1 -= 1
-        p2 += 1
-    return chaine[p1+1:p2]
-    
-def ajouter(chaine, liste):
+def add(chaine, liste):
     if len(liste) == 0 or len(liste[0]) == len(chaine):
         liste.append(chaine)
     elif len(liste[0]) < len(chaine):
         liste.clear()
         liste.append(chaine)
 
-for idx in range(len(mot) -2):
-    if mot[idx] == mot[idx + 1]:
-        ajouter(chercher(idx, idx+1, mot), liste_palin)
-    elif mot[idx] == mot[idx + 2]:
-        ajouter(chercher(idx, idx+2, mot), liste_palin)
+tail = head = -1
+idx = 0
+old_idx = -1
+
+while idx < len(mot):
+    
+    # we are in the middle of a palindrome, initialisation
+    if old_idx == -1:
+        old_idx = idx
+    
+        if idx-1 > -1 and idx < len(mot) and mot[idx-1] == mot[idx]:
+            tail = old_idx - ((idx - old_idx) + 1)
+            head = idx
+        elif idx-1 > -1 and idx+1 < len(mot) and mot[idx-1] == mot[idx+1]:
+            tail = old_idx - ((idx - old_idx) + 1)
+            head = idx + 1
+        else:
+            old_idx = -1
+            
+    # search how long the palindrome is
+    elif old_idx != -1:
+        if mot[tail] != mot[head]:
+            add(mot[tail+1:head], liste_palin)
+            idx = old_idx
+            old_idx = -1
+        elif (tail == 0 or head == len(mot)-1) and mot[tail] == mot[head]:
+            add(mot[tail:head+1], liste_palin)
+            idx = old_idx
+            old_idx = -1
+        else:
+            tail -= 1
+            head += 1
+            
+    idx += 1
 
 [print(palin) for palin in liste_palin]
