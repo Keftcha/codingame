@@ -4,8 +4,7 @@ import math
 n = int(input())
 q = int(input())
 
-dico_types = {}    #les clés sont les extentions et les valeurs sont les types
-MIME
+dico_types = {}    #les clés sont les extentions et les valeurs sont les types MIME
 liste_fichiers = []
 
 for i in range(n):
