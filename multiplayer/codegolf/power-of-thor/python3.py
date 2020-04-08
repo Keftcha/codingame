@@ -1,8 +1,2 @@
-a,b,c,d=[int(i)for i in input().split()]
-while 1:
- o=""
- if d<b:o+="S";d+=1
- if d>b:o+="N";d-=1
- if c<a:o+="E";c+=1
- if c>a:o+="W";c-=1
- print(o)
+a,b,c,d=map(int,input().split())
+while 1:x,y=(c<a)-(a<c),(d<b)-(b<d);print((" SN"[y]+" EW"[x]).strip());c+=x;d+=y
