@@ -1,5 +1,2 @@
 input()
-l=[int(i)for i in input().split()]
-l.sort(reverse=1)
-l.sort(key=abs)
-print(l and l[0]or 0)
+print(min(map(int,(input()or"0").split()),key=lambda n:(abs(n-.1))))
