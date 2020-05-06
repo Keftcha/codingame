@@ -1,0 +1,3 @@
+<<First line:>> The number of disappeared socks.
+<<Then:>> The [[sock size]] and the [[sock color]] (separated by a space) of all missing socks separated by a new line. Nothing if all socks are back from the washing.
+Socks must be in the numerical then alphabetical order. That means socks must be sorted by their size and if they have the same size by their colors.

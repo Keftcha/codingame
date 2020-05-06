@@ -1,0 +1,9 @@
+<<line 1:>> [[n]] the number of clothes and underwear in the washing machine.
+<<[[n]] next lines:>> [[clothes type]] [[clothes size]] [[clothes color]] a string, an int, and a string.
+
+Sock have the {{sock}} clothes type.
+Pants have the {{pants}} clothes type.
+T-Shirt have the {{t-shirt}} clothes type.
+And so on...
+
+A sock is the same as an other if they have the same [[clothes type]], [[clothes size]], and [[clothes color]]

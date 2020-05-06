@@ -1,0 +1,5 @@
+read n:int
+
+loop n read clotheType:word(50) clotheSize:int clotheColor:word(50)
+
+write missing socks

@@ -1,0 +1,235 @@
+Washing 1 TEST
+Entrée:
+5
+t-shirt 2 blue
+sock 42 red
+sock 42 red
+short 7 white
+sock 37 grey
+
+Sortie:
+1
+37 grey
+
+Washing 1 VALIDATEUR
+Entrée:
+5
+t-shirt 2 blue
+sock 42 red
+sock 42 red
+short 7 white
+sock 37 grey
+
+Sortie:
+1
+37 grey
+
+----------------------------------------------------------------
+
+Washing 2 TEST
+Entrée:
+7
+sock 43 blue-striped-red
+sweater 4 orange
+sock 43 purple
+pants 10 blue
+t-shirt 5 white
+sock 43 purple
+bra 95 yellow
+
+Sortie:
+1
+43 blue-striped-red
+
+Washing 2 VALIDATEUR
+Entrée:
+7
+sock 39 black-striped-dark-blue
+bra 90 black
+sweatshirt 8 purple-and-green
+sock 38 white
+pants 12 green
+shoes 41 dark-blue
+sock 38 white
+
+Sortie:
+1
+39 black-striped-dark-blue
+
+----------------------------------------------------------------
+
+Washing 3 TEST
+Entrée:
+9
+sock 42 brown
+sock 31 green
+sock 12 brown
+sock 41 blue
+sock 32 blue
+sock 42 yellow
+sock 47 white
+sock 36 purple
+sock 40 purple
+
+Sortie:
+9
+12 brown
+31 green
+32 blue
+36 purple
+40 purple
+41 blue
+42 brown
+42 yellow
+47 white
+
+Washing 3 VALIDATEUR
+Entrée:
+9
+sock 42 orange
+sock 13 green
+sock 21 orange
+sock 41 red
+sock 32 red
+sock 47 white
+sock 42 yellow
+sock 40 grey
+sock 36 grey
+
+Sortie:
+9
+13 green
+21 orange
+32 red
+36 grey
+40 grey
+41 red
+42 orange
+42 yellow
+47 white
+
+----------------------------------------------------------------
+
+Washing 4 TEST
+Entrée:
+5
+sweat 8 red
+t-shirt 6 ugly-purple
+underpants 5 white
+cap 0 light-blue
+underpants 5 white
+
+Sortie:
+0
+
+Washing 4 VALIDATEUR
+Entrée:
+5
+sweat 5 light-blue
+underpants 8 black
+cap 6 ugly-green
+t-shirt 0 red
+underpants 8 black
+
+Sortie:
+0
+
+----------------------------------------------------------------
+
+Washing 5 TEST
+Entrée:
+6
+sock 38 blue
+sock 43 green-and-blue-stripped-yellow
+short 7 orange
+sock 43 green-and-blue-stripped-yellow
+pants 40 pink
+sock 38 blue
+
+Sortie:
+0
+
+Washing 5 VALIDATEUR
+Entrée:
+6
+sock 39 orange
+sock 43 purple-and-yellow-stripped-green
+short 6 pink
+sock 43 purple-and-yellow-stripped-green
+pants 36 red
+sock 39 orange
+
+Sortie:
+0
+
+----------------------------------------------------------------
+
+Washing 6 TEST
+Entrée:
+0
+
+Sortie:
+0
+
+Washing 6 VALIDATEUR
+Entrée:
+0
+
+Sortie:
+0
+
+----------------------------------------------------------------
+
+Washing 7 TEST
+Entrée:
+4
+sock 42 red
+sock 43 blue
+sock 42 red
+sock 42 red
+
+Sortie:
+2
+42 red
+43 blue
+
+Washing 7 VALIDATEUR
+Entrée:
+4
+sock 41 pink
+sock 42 purple
+sock 41 pink
+sock 41 pink
+
+Sortie:
+2
+41 pink
+42 purple
+
+----------------------------------------------------------------
+
+Washing 8 TEST
+Entrée:
+5
+sock 15 blue
+sock 9 purple
+sock 15 blue
+pants 40 green
+t-shirt 15 orange
+
+Sortie:
+1
+9 purple
+
+Washing 8 VALIDATEUR
+Entrée:
+5
+sock 14 green
+sock 8 brown
+sock 14 green
+pants 42 yellow
+t-shirt 17 purple
+
+Sortie:
+1
+8 brown
