@@ -1,2 +1,2 @@
 input()
-print(min(map(int,(input()or"0").split()),key=lambda n:(abs(n-.1))))
+print(min(input().split() or "0", key=lambda n: abs(int(n) - 0.1)))
